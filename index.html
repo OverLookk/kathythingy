@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explosion Button</title>
+    <style>
+        #explosion-container {
+            position: relative;
+            display: inline-block;
+        }
+        #explosion-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            pointer-events: none;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="explosion-container">
+        <button id="explode-button">Press Me!</button>
+        <img id="explosion-gif" src="https://i.gifer.com/2a9n.gif" alt="Explosion">
+    </div>
+    <p id="message">Boom! Explosion occurred!</p>
+
+    <audio id="boom-sound" src="https://cdn.pixabay.com/download/audio/2023/03/07/audio_6eb19824b2.mp3"></audio>
+
+    <script>
+        document.getElementById('explode-button').addEventListener('click', function() {
+            var explosionGif = document.getElementById('explosion-gif');
+            var boomSound = document.getElementById('boom-sound');
+            var message = document.getElementById('message');
+
+            // Display the explosion GIF
+            explosionGif.style.display = 'block';
+
+            // Play the boom sound
+            boomSound.play();
+
+            // Hide the button to prevent multiple clicks
+            this.style.display = 'none';
+
+            // After the GIF and sound, display the message
+            setTimeout(function() {
+                explosionGif.style.display = 'none';
+                message.style.display = 'block';
+            }, 2000); // Adjust the timeout to match the duration of your GIF and sound
+        });
+    </script>
+</body>
+</html>
