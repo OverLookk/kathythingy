@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <title>Explosion Button</title>
     <style>
+        body {
+            background-color: black; /* Set the background color to black */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white; /* Set the text color to white for better visibility */
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
         #explosion-container {
             position: relative;
             display: inline-block;
+            text-align: center; /* Center the content inside the container */
         }
+
         #explosion-gif {
             position: absolute;
             top: 0;
@@ -17,11 +31,27 @@
             display: none;
             pointer-events: none;
         }
+
         #message {
             display: none;
             margin-top: 20px;
             font-size: 20px;
             color: red;
+        }
+
+        #explode-button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #explode-button:hover {
+            background-color: #555;
         }
     </style>
 </head>
