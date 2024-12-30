@@ -12,8 +12,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100px; /* Set specific width for visibility */
+            height: 100px; /* Set specific height for visibility */
             display: none;
             pointer-events: none;
         }
@@ -39,6 +39,11 @@
             var explosionGif = document.getElementById('explosion-gif');
             var boomSound = document.getElementById('boom-sound');
             var message = document.getElementById('message');
+
+            if (!explosionGif.src.includes('explosion.gif')) {
+                console.error('Explosion GIF not found. Please check the file path.');
+                return;
+            }
 
             // Display the explosion GIF
             explosionGif.style.display = 'block';
